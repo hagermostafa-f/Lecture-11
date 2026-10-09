@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="Todo">
+        <div class="Todo-App">
+            <h3>To Do App</h3>
+
+            <div class="create">
+                <input type="text" class="input-task" placeholder="New task">
+                <input type="text" class="input-desc" placeholder="Task description">
+                <button class="btn-create" onclick="saveTask()">Create</button>
+            </div>
+
+            <div class="filters">
+
+                <button class="btn-filter active" onclick="filterTasks('all')">All</button>
+                <button class="btn-filter" onclick="filterTasks('done')">Done</button>
+                <button class="btn-filter" onclick="filterTasks('created')">Created</button>
+            </div>
+
+
+            <div class="tasks-header">
+                <span class="tasks-title">Tasks</span>
+                <span class="tasks-count">1/4</span>
+            </div>
+
+            <div class="task-list">
+                <div class="task">
+                    <div class="task-info">
+                        <p class="task-name">Task 1</p>
+                        <p class="task-desc">Sign In</p>
+                    </div>
+                    <button class="status status-created">Created</button>
+                    <div class="actions">
+                        <button class="btn-done">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <button class="btn-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1l1-4z" />
+                            </svg>
+                        </button>
+                        <button class="btn-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <div class="task-info">
+                        <p class="task-name">Task 2</p>
+                        <p class="task-desc">To Do List</p>
+                    </div>
+                    <button class="status status-created">Created</button>
+                    <div class="actions">
+                        <button class="btn-done">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <button class="btn-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1l1-4z" />
+                            </svg>
+                        </button>
+                        <button class="btn-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <div class="task-info">
+                        <p class="task-name">Task 3</p>
+                        <p class="task-desc">Cards</p>
+                    </div>
+                    <button class="status status-done">Done</button>
+                    <div class="actions">
+                        <button class="btn-done">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <button class="btn-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1l1-4z" />
+                            </svg>
+                        </button>
+                        <button class="btn-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task">
+                    <div class="task-info">
+                        <p class="task-name">Task 4</p>
+                        <p class="task-desc">Semi Final</p>
+                    </div>
+                    <button class="status status-created">Created</button>
+                    <div class="actions">
+                        <button class="btn-done">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <button class="btn-edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1l1-4z" />
+                            </svg>
+                        </button>
+                        <button class="btn-delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
